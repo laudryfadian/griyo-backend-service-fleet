@@ -1,0 +1,9 @@
+syntax = "proto3";
+package griyo.v1;
+option go_package = "github.com/laudryfadian/griyo-backend-service-fleet/internal/pb";
+// Domain payloads are JSON decoded into strict domain structs by each service.
+message Request { string operation = 1; string resource = 2; string id = 3; bytes body = 4; }
+message Response { bytes body = 1; }
+service WorkspaceService { rpc Execute(Request) returns (Response); }
+service FleetService { rpc Execute(Request) returns (Response); }
+service TaskService { rpc Execute(Request) returns (Response); }

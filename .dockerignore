@@ -1,0 +1,4 @@
+.git
+.env
+deploy/.env
+bin
